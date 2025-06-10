@@ -1,9 +1,16 @@
-<section id="information" class="mb-8">
+---
+import Image from "astro/components/Image.astro";
+---
+
+<section id="projects" class="mb-8">
   <div class="grid grid-cols-1 sm:grid-cols-5 gap-6">
     <div class="md:col-span-2">
-      <img
+      <Image
         src="/me.jpeg"
-        alt="Pichayapon Chaipanha's profile picture"
+        width="32"
+        height="32"
+        alt="me"
+        loading={"eager"}
         class="w-full h-full object-cover rounded-lg border border-zinc-200"
       />
     </div>
