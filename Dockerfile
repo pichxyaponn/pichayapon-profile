@@ -16,9 +16,10 @@ RUN apk add --no-cache curl
 
 RUN mkdir -p /var/run/nginx && \
     touch /var/run/nginx/nginx.pid && \
-    chown -R nginx:nginx /var/run/nginx
+    chown -R nginx:nginx /var/run/nginx && \
+    chown -R nginx:nginx /var/cache/nginx
 
-RUN chown -R nginx:nginx /var/cache/nginx /var/log/nginx
+RUN sed -i 's|/run/nginx.pid|/var/run/nginx/nginx.pid|' /etc/nginx/nginx.conf
 
 COPY --from=builder --chown=nginx:nginx /app/dist /usr/share/nginx/html
 COPY --chown=nginx:nginx nginx.conf /etc/nginx/conf.d/default.conf
