@@ -56,23 +56,8 @@ const { title } = Astro.props;
         </div>
       </nav>
     </header>
-    <slot transition:animate="fade" />
+    <main>
+      <slot transition:animate="fade" />
+    </main>
   </body>
 </html>
-
-<style is:global>
-  @keyframes bump {
-    0% {
-      opacity: 0;
-      transform: scale(1) translateX(200px);
-    }
-    50% {
-      opacity: 0.5;
-      transform: scale(1.1);
-    }
-    100% {
-      opacity: 1;
-      transform: scale(1) translateX(0);
-    }
-  }
-</style>

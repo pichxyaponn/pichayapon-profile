@@ -1,11 +1,5 @@
 @import "tailwindcss";
 
-/* :root {
-  font-family: "Sarabun", sans-serif, cursive;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-} */
-
 @theme {
   --font-display: "Sarabun", sans-serif, cursive;
 }
@@ -20,11 +14,15 @@
   }
 
   .tech-badge {
-    @apply rounded-full px-2.5 py-0.5 text-xs font-medium;
+    @apply rounded-full px-3 py-1 text-sm font-medium;
   }
 
   .fi {
     @apply flex items-center;
+  }
+
+  .section-container {
+    @apply mx-auto max-w-4xl px-4 py-16;
   }
 }
 
