@@ -1,0 +1,36 @@
+@import "tailwindcss";
+
+/* :root {
+  font-family: "Sarabun", sans-serif, cursive;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+} */
+
+@theme {
+  --font-display: "Sarabun", sans-serif, cursive;
+}
+
+@layer utilities {
+  .link {
+    @apply transition-colors hover:text-zinc-900;
+  }
+
+  .text-bold {
+    @apply font-medium text-zinc-900;
+  }
+
+  .tech-badge {
+    @apply rounded-full px-2.5 py-0.5 text-xs font-medium;
+  }
+
+  .fi {
+    @apply flex items-center;
+  }
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
+  }
+}

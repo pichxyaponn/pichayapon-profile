@@ -1,0 +1,17 @@
+{
+  "semi": true,
+  "singleQuote": false,
+  "trailingComma": "none",
+  "tabWidth": 2,
+  "printWidth": 98,
+  "bracketSpacing": true,
+  "arrowParens": "always",
+  "endOfLine": "lf",
+  "importOrder": ["^[.]"],
+  "importOrderCaseSensitive": true,
+  "plugins": [
+    "prettier-plugin-tailwindcss",
+    "@ianvs/prettier-plugin-sort-imports",
+    "prettier-plugin-astro"
+  ]
+}

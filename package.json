@@ -6,9 +6,22 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "test": "bun run playwright test"
   },
   "dependencies": {
-    "astro": "^5.9.2"
+    "@fontsource/sarabun": "^5.2.6",
+    "@tailwindcss/vite": "^4.1.8",
+    "astro": "^5.9.2",
+    "tailwindcss": "^4.1.8",
+    "playwright": "^1.52.0"
+  },
+  "devDependencies": {
+    "@ianvs/prettier-plugin-sort-imports": "^4.4.2",
+    "prettier": "^3.5.3",
+    "prettier-plugin-astro": "^0.14.1",
+    "prettier-plugin-tailwindcss": "^0.6.12"
   }
 }
