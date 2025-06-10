@@ -14,6 +14,12 @@ FROM nginx:stable-alpine-slim
 
 RUN apk add --no-cache curl
 
+RUN mkdir -p /var/run/nginx && \
+    touch /var/run/nginx/nginx.pid && \
+    chown -R nginx:nginx /var/run/nginx
+
+RUN chown -R nginx:nginx /var/cache/nginx /var/log/nginx
+
 COPY --from=builder --chown=nginx:nginx /app/dist /usr/share/nginx/html
 COPY --chown=nginx:nginx nginx.conf /etc/nginx/conf.d/default.conf
 
