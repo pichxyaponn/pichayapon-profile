@@ -1,0 +1,3 @@
+# https://pichayapon.com
+User-agent: *
+Allow: /
