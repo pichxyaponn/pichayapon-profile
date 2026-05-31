@@ -13,14 +13,14 @@
   },
   "dependencies": {
     "@astrojs/rss": "^4.0.12",
-    "@fontsource/sarabun": "^5.2.6",
+    "@fontsource/sarabun": "^5.2.8",
     "@tailwindcss/vite": "^4.1.8",
     "astro": "^5.9.2",
-    "playwright": "^1.52.0",
     "tailwindcss": "^4.1.8"
   },
   "devDependencies": {
     "@ianvs/prettier-plugin-sort-imports": "^4.4.2",
+    "@playwright/test": "^1.60.0",
     "prettier": "^3.5.3",
     "prettier-plugin-astro": "^0.14.1",
     "prettier-plugin-tailwindcss": "^0.6.12"

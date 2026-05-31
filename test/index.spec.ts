@@ -1,7 +1,7 @@
-import { expect, test } from "playwright/test";
+import { expect, test } from "@playwright/test";
 
 test("meta is correct", async ({ page }) => {
-  await page.goto("http://localhost:4321/");
+  await page.goto("/");
 
   await expect(page).toHaveTitle("Pichayapon • pichxyaponn");
 });

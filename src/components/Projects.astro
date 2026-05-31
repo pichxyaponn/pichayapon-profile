@@ -1,66 +1,66 @@
 ---
-import Image from "astro/components/Image.astro";
+import { Image } from "astro:assets";
+import me from "../assets/me.jpeg";
 ---
 
 <section id="projects" class="mb-8">
-  <div class="grid grid-cols-1 sm:grid-cols-5 gap-6">
+  <div class="grid grid-cols-1 gap-6 sm:grid-cols-5">
     <div class="md:col-span-2">
       <Image
-        src="/me.jpeg"
-        width="32"
-        height="32"
-        alt="me"
-        loading={"eager"}
-        class="w-full h-full object-cover rounded-lg border border-zinc-200"
+        src={me}
+        width={768}
+        alt="Pichayapon Chaipanha"
+        loading="eager"
+        class="h-full w-full rounded-lg border border-zinc-200 object-cover"
       />
     </div>
     <div class="md:col-span-3">
       <div
-        class="bg-white/80 backdrop-blur-sm border border-zinc-200 rounded-lg shadow-sm hover:shadow-lg transition-shadow duration-300 p-3 space-y-1"
+        class="space-y-1 rounded-lg border border-zinc-200 bg-white/80 p-3 shadow-sm backdrop-blur-sm transition-shadow duration-300 hover:shadow-lg"
       >
         <a
           href="https://winterfell.xentinal.net"
           target="_blank"
           rel="noopener noreferrer"
-          class="block p-3 py-2 transition-all duration-300 hover:bg-zinc-100 hover:shadow-md rounded-md border border-transparent hover:border-zinc-200"
+          class="block rounded-md border border-transparent p-3 py-2 transition-all duration-300 hover:border-zinc-200 hover:bg-zinc-100 hover:shadow-md"
         >
           <div class="fi justify-between">
             <div class="flex-1 space-y-0">
               <h3 class="text-bold">Digital E-Commerce Platform</h3>
-              <p class="text-zinc-500 text-sm">
+              <p class="text-sm text-zinc-500">
                 Working as a full-stack developer on the Winterfell project.
               </p>
               <div>
-                <span class="inline-block bg-sky-100 text-sky-800 tech-badge">Next.js</span>
-                <span class="inline-block bg-emerald-100 text-emerald-800 tech-badge"
+                <span class="tech-badge inline-block bg-sky-100 text-sky-800">Next.js</span>
+                <span class="tech-badge inline-block bg-emerald-100 text-emerald-800"
                   >ElysiaJS</span
                 >
-                <span class="inline-block bg-neutral-100 text-neutral-800 tech-badge">Kysely</span
+                <span class="tech-badge inline-block bg-neutral-100 text-neutral-800">Kysely</span
                 >
               </div>
             </div>
-            <div class="text-zinc-500 text-sm">Personal Project</div>
+            <div class="text-sm text-zinc-500">Personal Project</div>
           </div>
         </a>
         <a
           href="http://xentinal.net"
           target="_blank"
           rel="noopener noreferrer"
-          class="block p-3 py-2 transition-all duration-300 hover:bg-zinc-100 hover:shadow-md rounded-md border border-transparent hover:border-zinc-200"
+          class="block rounded-md border border-transparent p-3 py-2 transition-all duration-300 hover:border-zinc-200 hover:bg-zinc-100 hover:shadow-md"
         >
           <div class="fi justify-between">
             <div class="flex-1 space-y-0">
               <h3 class="text-bold">Program Rental Service</h3>
-              <p class="text-zinc-500 text-sm">
+              <p class="text-sm text-zinc-500">
                 Developed a full-stack application for program rentals.
               </p>
               <div>
-                <span class="inline-block bg-sky-100 text-emerald-800 tech-badge">Next.js</span>
-                <span class="inline-block bg-emerald-100 text-sky-800 tech-badge">ElysiaJS</span>
-                <span class="inline-block bg-neutral-100 text-sky-800 tech-badge">Kysely</span>
+                <span class="tech-badge inline-block bg-sky-100 text-emerald-800">Next.js</span>
+                <span class="tech-badge inline-block bg-emerald-100 text-sky-800">ElysiaJS</span>
+                <span class="tech-badge inline-block bg-neutral-100 text-sky-800">Kysely</span>
               </div>
             </div>
-            <div class="text-zinc-500 text-sm">Personal Project</div>
+            <div class="text-sm text-zinc-500">Personal Project</div>
           </div>
         </a>
       </div>

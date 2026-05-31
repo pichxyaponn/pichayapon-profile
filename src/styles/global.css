@@ -1,29 +1,27 @@
 @import "tailwindcss";
 
 @theme {
-  --font-display: "Sarabun", sans-serif, cursive;
+  --font-sans: "Sarabun", ui-sans-serif, system-ui, sans-serif;
 }
 
-@layer utilities {
-  .link {
-    @apply transition-colors hover:text-zinc-900;
-  }
+@utility link {
+  @apply transition-colors hover:text-zinc-900;
+}
 
-  .text-bold {
-    @apply font-medium text-zinc-900;
-  }
+@utility text-bold {
+  @apply font-medium text-zinc-900;
+}
 
-  .tech-badge {
-    @apply rounded-full px-3 py-1 text-sm font-medium;
-  }
+@utility tech-badge {
+  @apply rounded-full px-3 py-1 text-sm font-medium;
+}
 
-  .fi {
-    @apply flex items-center;
-  }
+@utility fi {
+  @apply flex items-center;
+}
 
-  .section-container {
-    @apply mx-auto max-w-4xl px-4 py-16;
-  }
+@utility section-container {
+  @apply mx-auto max-w-4xl px-4 py-16;
 }
 
 @layer base {
