@@ -1,3 +1,5 @@
 # https://pichayapon.com
 User-agent: *
 Allow: /
+
+Sitemap: https://pichayapon.com/sitemap-index.xml
