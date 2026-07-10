@@ -15,7 +15,7 @@
     "@astrojs/rss": "^4.0.19",
     "@fontsource/sarabun": "^5.2.8",
     "@tailwindcss/vite": "^4.3.2",
-    "astro": "^5.18.2",
+    "astro": "^6",
     "tailwindcss": "^4.3.2"
   },
   "devDependencies": {
