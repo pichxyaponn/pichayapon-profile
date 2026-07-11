@@ -1,0 +1,107 @@
+---
+import { Image } from "astro:assets";
+import apiCert from "../assets/certs/borntodev-api-101.png";
+import githubCert from "../assets/certs/borntodev-github-for-developer.png";
+import Layout from "../layouts/Layout.astro";
+
+type Certification = {
+  title: string;
+  issuer: string;
+  issuerUrl?: string;
+  issuedAt: Date;
+  credentialId: string;
+  thumbnail: ImageMetadata;
+  fullImage: string;
+};
+
+const certifications: Certification[] = [
+  {
+    title: "API 101",
+    issuer: "borntoDev School",
+    issuerUrl: "https://school.borntodev.com/",
+    issuedAt: new Date("2026-07-12"),
+    credentialId: "yk7Y7QbFcF8B",
+    thumbnail: apiCert,
+    fullImage: "/certs/borntodev-api-101.png"
+  },
+  {
+    title: "GitHub for Developer",
+    issuer: "borntoDev School",
+    issuerUrl: "https://school.borntodev.com/",
+    issuedAt: new Date("2026-07-12"),
+    credentialId: "TdpVu2Qy9aHU",
+    thumbnail: githubCert,
+    fullImage: "/certs/borntodev-github-for-developer.png"
+  }
+];
+
+// Newest first — future-proofs the list as more certs land.
+certifications.sort((a, b) => b.issuedAt.getTime() - a.issuedAt.getTime());
+
+const fmtMonth = new Intl.DateTimeFormat("en-US", { year: "numeric", month: "long" });
+---
+
+<Layout
+  title="Certifications • pichxyaponn"
+  description="Verified courses and certifications completed by Pichayapon Chaipanha."
+>
+  <main class="container mx-auto max-w-4xl p-2 pt-4">
+    <section id="certifications" class="mb-8">
+      <div class="rounded-lg border border-zinc-200 bg-white/80 p-5 shadow-sm backdrop-blur-sm">
+        <h1 class="mb-1 text-lg font-medium text-zinc-900">Certifications</h1>
+        <p class="mb-4 text-sm font-light text-zinc-600">
+          Courses I've completed with a verified certificate. Click a thumbnail to view the full
+          certificate.
+        </p>
+        <div class="space-y-3">
+          {
+            certifications.map((cert) => (
+              <div class="fi gap-4 rounded-md border border-transparent p-3 transition-all duration-300 hover:border-zinc-200 hover:bg-zinc-100">
+                <a
+                  href={cert.fullImage}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="block shrink-0"
+                  aria-label={`View full certificate for ${cert.title}`}
+                >
+                  <Image
+                    src={cert.thumbnail}
+                    alt={`${cert.title} certificate from ${cert.issuer}`}
+                    width={320}
+                    layout="constrained"
+                    class="w-28 rounded border border-zinc-200 sm:w-40"
+                  />
+                </a>
+                <div class="flex-1 space-y-0.5">
+                  <h3 class="text-bold">{cert.title}</h3>
+                  <p class="text-sm text-zinc-500">
+                    {cert.issuerUrl ? (
+                      <a
+                        href={cert.issuerUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="link"
+                      >
+                        {cert.issuer}
+                      </a>
+                    ) : (
+                      cert.issuer
+                    )}
+                    {" · "}
+                    <time datetime={cert.issuedAt.toISOString().slice(0, 10)}>
+                      {fmtMonth.format(cert.issuedAt)}
+                    </time>
+                  </p>
+                  <p class="text-xs text-zinc-500">
+                    Credential ID:{" "}
+                    <code class="font-mono text-zinc-700">{cert.credentialId}</code>
+                  </p>
+                </div>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+  </main>
+</Layout>
