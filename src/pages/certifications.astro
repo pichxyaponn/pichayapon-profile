@@ -1,6 +1,7 @@
 ---
 import { Image } from "astro:assets";
-import amdAgentsCert from "../assets/certs/amd-ai-agents-101-mcp.png";
+import amdAgents101Cert from "../assets/certs/amd-ai-agents-101-mcp.png";
+import amdAgents201Cert from "../assets/certs/amd-ai-agents-201-multi-agent.png";
 import apiCert from "../assets/certs/borntodev-api-101.png";
 import githubCert from "../assets/certs/borntodev-github-for-developer.png";
 import Layout from "../layouts/Layout.astro";
@@ -19,12 +20,21 @@ type Certification = {
 
 const certifications: Certification[] = [
   {
+    title: "AI Agents 201: Design to Deployment: A Hands-On Guide to Multi-Agent Systems",
+    issuer: "AMD AI Academy",
+    issuerUrl: "https://www.amd.com/en/corporate/university-program/ai-academy.html",
+    issuedAt: new Date("2026-07-13"),
+    credentialId: "4F5B2319BA414480BCA14CE8A98D1499166282",
+    thumbnail: amdAgents201Cert,
+    fullImage: "/certs/amd-ai-agents-201-multi-agent.pdf"
+  },
+  {
     title: "AI Agents 101: Building AI Agents with MCP and Open-Source Inference",
     issuer: "AMD AI Academy",
     issuerUrl: "https://www.amd.com/en/corporate/university-program/ai-academy.html",
     issuedAt: new Date("2026-07-13"),
     credentialId: "4F5B2319BA414480BCA14CE8A98D1499166281",
-    thumbnail: amdAgentsCert,
+    thumbnail: amdAgents101Cert,
     fullImage: "/certs/amd-ai-agents-101-mcp.pdf"
   },
   {
