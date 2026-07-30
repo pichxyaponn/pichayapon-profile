@@ -4,6 +4,7 @@ import amdAgents101Cert from "../assets/certs/amd-ai-agents-101-mcp.png";
 import amdAgents201Cert from "../assets/certs/amd-ai-agents-201-multi-agent.png";
 import apiCert from "../assets/certs/borntodev-api-101.png";
 import githubCert from "../assets/certs/borntodev-github-for-developer.png";
+import engihackCert from "../assets/certs/engihack-2026-first-prize.png";
 import Layout from "../layouts/Layout.astro";
 
 type Certification = {
@@ -19,6 +20,15 @@ type Certification = {
 };
 
 const certifications: Certification[] = [
+  {
+    title: "First Prize Award — ENGiHack 2026: The 1st Energy and Environmental Hackathon",
+    issuer:
+      "Faculty of Science and Engineering, Kasetsart University Chalermphrakiat Sakon Nakhon",
+    // Awarded on the final day of the 23–25 July 2026 event.
+    issuedAt: new Date("2026-07-25"),
+    thumbnail: engihackCert,
+    fullImage: "/certs/engihack-2026-first-prize.pdf"
+  },
   {
     title: "AI Agents 201: Design to Deployment: A Hands-On Guide to Multi-Agent Systems",
     issuer: "AMD AI Academy",
@@ -72,8 +82,8 @@ const fmtMonth = new Intl.DateTimeFormat("en-US", { year: "numeric", month: "lon
       <div class="rounded-lg border border-zinc-200 bg-white/80 p-5 shadow-sm backdrop-blur-sm">
         <h1 class="mb-1 text-lg font-medium text-zinc-900">Certifications</h1>
         <p class="mb-4 text-sm font-light text-zinc-600">
-          Courses I've completed with a verified certificate. Click a thumbnail to view the full
-          certificate.
+          Courses I've completed and awards I've received, with a verified certificate. Click a
+          thumbnail to view the full certificate.
         </p>
         <div class="space-y-3">
           {
