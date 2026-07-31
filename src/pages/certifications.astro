@@ -5,6 +5,7 @@ import amdAgents201Cert from "../assets/certs/amd-ai-agents-201-multi-agent.png"
 import apiCert from "../assets/certs/borntodev-api-101.png";
 import githubCert from "../assets/certs/borntodev-github-for-developer.png";
 import engihackCert from "../assets/certs/engihack-2026-first-prize.png";
+import mtcnaCert from "../assets/certs/mikrotik-mtcna.png";
 import Layout from "../layouts/Layout.astro";
 
 type Certification = {
@@ -20,6 +21,16 @@ type Certification = {
 };
 
 const certifications: Certification[] = [
+  {
+    title: "MTCNA — MikroTik Certified Network Associate",
+    issuer: "MikroTik",
+    issuerUrl: "https://mikrotik.com/training",
+    issuedAt: new Date("2026-07-31"),
+    // Valid for three years since issue, so this one lapses 2029-07-31.
+    credentialId: "2607NA2192",
+    thumbnail: mtcnaCert,
+    fullImage: "/certs/mikrotik-mtcna.pdf"
+  },
   {
     title: "First Prize Award — ENGiHack 2026: The 1st Energy and Environmental Hackathon",
     issuer:
