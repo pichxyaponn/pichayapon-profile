@@ -1,12 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Pichayapon Chaipanha">
-  <!-- Solid plate rather than a transparent glyph: a browser tab strip may be
-       light or dark, and a bare monogram disappears into one of them. -->
   <rect width="64" height="64" rx="14" fill="#18181b"/>
-  <!-- Monogram P. Drawn as filled geometry, not text: a favicon is rasterised
-       without the page's fonts, so a <text> element would fall back to whatever
-       the renderer has and shift between platforms. -->
   <path fill="#fafafa" d="M20 14h15.5c7.7 0 13 4.9 13 12.2 0 7.4-5.3 12.3-13 12.3H28.5V50H20V14Zm8.5 7.4v9.7h6.2c3.2 0 5.2-1.9 5.2-4.9 0-2.9-2-4.8-5.2-4.8h-6.2Z"/>
-  <!-- The dot closes the descender gap so the mark still reads as a letter at
-       16px, where the counter of the P fills in. -->
   <circle cx="44.5" cy="46" r="4" fill="#38bdf8"/>
 </svg>
