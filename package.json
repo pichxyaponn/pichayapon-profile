@@ -11,7 +11,8 @@
     "format:check": "prettier --check .",
     "test": "astro build && astro preview --background --host 127.0.0.1 && playwright test; astro preview stop",
     "serve:test": "astro build && astro preview --background --host 127.0.0.1",
-    "icons": "node scripts/icons.mjs"
+    "icons": "node scripts/icons.mjs",
+    "lastmod": "node scripts/lastmod.mjs"
   },
   "dependencies": {
     "@astrojs/rss": "^4.0.19",

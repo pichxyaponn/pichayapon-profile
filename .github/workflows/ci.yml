@@ -59,6 +59,16 @@ jobs:
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v6
+        with:
+          # lastmod.json is derived from commit dates, so the generator needs
+          # real history — a shallow clone reports one commit for every file.
+          fetch-depth: 0
+
+      # Must run BEFORE the image build: oven/bun:slim has no git binary, so the
+      # dates cannot be derived inside the container. This writes them into the
+      # build context as data instead.
+      - name: Generate sitemap lastmod
+        run: node scripts/lastmod.mjs
 
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v4
