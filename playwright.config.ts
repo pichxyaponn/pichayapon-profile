@@ -7,7 +7,7 @@ export default defineConfig({
   },
   webServer: {
     command: "bun run serve:test",
-    url: "http://localhost:4321",
+    url: "http://127.0.0.1:4321",
     reuseExistingServer: true
   }
 });
