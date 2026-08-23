@@ -6,8 +6,8 @@ export default defineConfig({
     baseURL: "http://localhost:4321"
   },
   webServer: {
-    command: "bun run dev",
+    command: "bun run serve:test",
     url: "http://localhost:4321",
-    reuseExistingServer: !process.env.CI
+    reuseExistingServer: true
   }
 });

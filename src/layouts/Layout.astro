@@ -8,12 +8,29 @@ import Footer from "../components/Footer.astro";
 interface Props {
   title: string;
   description?: string;
+  /** Set on pages that must never be indexed — the 404 in particular. */
+  noindex?: boolean;
 }
 
 const {
   title,
-  description = "Pichayapon Chaipanha — full-stack developer. API development, cybersecurity, DevSecOps and cloud infrastructure."
+  description = "Pichayapon Chaipanha — full-stack developer. API development, cybersecurity, DevSecOps and cloud infrastructure.",
+  noindex = false
 } = Astro.props;
+
+// Absolute, and derived from Astro.url rather than hardcoded, so a page added
+// later cannot ship pointing at the homepage.
+const canonical = new URL(Astro.url.pathname, Astro.site).href;
+
+const personLd = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: "Pichayapon Chaipanha",
+  url: Astro.site?.href,
+  jobTitle: "Full-stack developer",
+  knowsAbout: ["API development", "Cybersecurity", "DevSecOps", "Cloud infrastructure"],
+  sameAs: ["https://github.com/pichxyaponn"]
+};
 ---
 
 <!doctype html>
@@ -30,6 +47,18 @@ const {
       href="/rss.xml"
     />
     <meta name="generator" content={Astro.generator} />
+    <link rel="canonical" href={canonical} />
+    {noindex && <meta name="robots" content="noindex, follow" />}
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Pichayapon Chaipanha" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:locale" content="en_US" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <script type="application/ld+json" set:html={JSON.stringify(personLd)} />
     <title>{title}</title>
   </head>
   <body class="mx-auto bg-zinc-50 text-zinc-800">
