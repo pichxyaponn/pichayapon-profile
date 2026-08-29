@@ -1,0 +1,68 @@
+---
+const capabilities = [
+  {
+    title: "Payment & payout systems",
+    body: "Rust services sitting on the money path for several platforms. The hard parts are the unglamorous ones — idempotency, reconciling stuck transactions, deduplicating payment slips, and recovering cleanly when a provider's callback never arrives.",
+    tags: [
+      { label: "Rust", class: "bg-orange-100 text-orange-800" },
+      { label: "ntex", class: "bg-rose-100 text-rose-800" },
+      { label: "Diesel", class: "bg-neutral-100 text-neutral-800" },
+      { label: "PostgreSQL", class: "bg-sky-100 text-sky-800" }
+    ]
+  },
+  {
+    title: "Multi-target production deployments",
+    body: "One branch shipping to several independent production environments, each with its own database and its own configuration. A fix isn't shipped until every target has it — so the tooling has to make that state visible rather than assumed.",
+    tags: [
+      { label: "Docker", class: "bg-blue-100 text-blue-800" },
+      { label: "Caddy", class: "bg-teal-100 text-teal-800" },
+      { label: "Next.js", class: "bg-sky-100 text-sky-800" },
+      { label: "ElysiaJS", class: "bg-emerald-100 text-emerald-800" },
+      { label: "Drizzle", class: "bg-neutral-100 text-neutral-800" }
+    ]
+  },
+  {
+    title: "Fleet operations & alerting",
+    body: "Health checks across a fleet of hosts reporting into Telegram, plus the automation around deploys, backups, and incident response. Built because paging a human to run a checklist doesn't scale past the third server.",
+    tags: [
+      { label: "Bash", class: "bg-zinc-100 text-zinc-800" },
+      { label: "Telegram Bot API", class: "bg-cyan-100 text-cyan-800" },
+      { label: "Cloudflare", class: "bg-amber-100 text-amber-800" }
+    ]
+  },
+  {
+    title: "LLM agents in the operations loop",
+    body: "Running Claude and MCP-based agents against real infrastructure rather than in a sandbox — which means the interesting design question is not what an agent can do, but which actions it should be allowed to take and how you prove afterwards who authorised what.",
+    tags: [
+      { label: "Claude", class: "bg-orange-100 text-orange-800" },
+      { label: "MCP", class: "bg-violet-100 text-violet-800" },
+      { label: "TypeScript", class: "bg-blue-100 text-blue-800" }
+    ]
+  }
+];
+---
+
+<section id="capabilities" class="mb-8">
+  <h2 class="text-bold mb-3 px-1 text-sm tracking-wide uppercase">What I work on</h2>
+  <div
+    class="space-y-1 rounded-lg border border-zinc-200 bg-white/80 p-3 shadow-sm backdrop-blur-sm transition-shadow duration-300 hover:shadow-lg"
+  >
+    {
+      capabilities.map((c) => (
+        <div class="rounded-md border border-transparent p-3 py-2 transition-all duration-300 hover:border-zinc-200 hover:bg-zinc-100">
+          <h3 class="text-bold">{c.title}</h3>
+          <p class="text-sm font-light text-zinc-600">{c.body}</p>
+          <div class="mt-1">
+            {c.tags.map((t) => (
+              <span class:list={["tech-badge", "inline-block", t.class]}>{t.label}</span>
+            ))}
+          </div>
+        </div>
+      ))
+    }
+  </div>
+  <p class="mt-2 px-1 text-sm font-light text-zinc-500">
+    Most of this runs in private repositories under client agreements, so the public contribution
+    graph is a poor guide to it. Happy to walk through any of it in detail.
+  </p>
+</section>
