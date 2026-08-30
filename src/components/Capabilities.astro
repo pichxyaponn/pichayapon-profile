@@ -32,7 +32,7 @@ const capabilities = [
   },
   {
     title: "LLM agents in the operations loop",
-    body: "Running Claude and MCP-based agents against real infrastructure rather than in a sandbox — which means the interesting design question is not what an agent can do, but which actions it should be allowed to take and how you prove afterwards who authorised what.",
+    body: "Agents pointed at production rather than a sandbox — deploys, database reads, incident response. The design work is not in what an agent can do but in which actions it is allowed to take, and in being able to show afterwards who authorised each one.",
     tags: [
       { label: "Claude", class: "bg-orange-100 text-orange-800" },
       { label: "MCP", class: "bg-violet-100 text-violet-800" },
@@ -43,7 +43,10 @@ const capabilities = [
 ---
 
 <section id="capabilities" class="mb-8">
-  <h2 class="text-bold mb-3 px-1 text-sm tracking-wide uppercase">What I work on</h2>
+  <h2 class="text-bold mb-1 px-1 text-sm tracking-wide uppercase">What I work on</h2>
+  <p class="mb-3 px-1 text-sm font-light text-zinc-500">
+    Client work, so these are problem classes rather than links. The public projects are below.
+  </p>
   <div
     class="space-y-1 rounded-lg border border-zinc-200 bg-white/80 p-3 shadow-sm backdrop-blur-sm transition-shadow duration-300 hover:shadow-lg"
   >
